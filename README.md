@@ -38,27 +38,27 @@ Testing was structured across three specialized testing tracks:
 ## 🏛️ Testing Architecture
 
 ```mermaid
-graph TD
-    subgraph Client ["Performance Testing Engines"]
-        JM["Apache JMeter<br/>(Headless Non-GUI Engine)"]
-        LH["Google Lighthouse<br/>(Chrome DevTools Engine)"]
+flowchart TD
+    subgraph Engines ["Performance Testing Engines"]
+        JM["Apache JMeter - Headless Non-GUI Engine"]
+        LH["Google Lighthouse - Chrome DevTools Engine"]
     end
 
     subgraph Targets ["Authorized Testing Environments"]
-        T1["Target A: E-Commerce Mock API<br/>(fake-store-api.mock.beeceptor.com)"]
-        T2["Target B: Student Service QA Sandbox<br/>(thetestingworldapi.com)"]
-        T3["Target C: Web Portals Client-Side<br/>(DOM Rendering & Assets)"]
+        T1["Target A: E-Commerce Mock API (Beeceptor Sandbox)"]
+        T2["Target B: Student REST API (QA Test Environment)"]
+        T3["Target C: Client-Side Web Portals (DOM & Assets)"]
     end
 
     subgraph Deliverables ["Generated Artifacts & Dashboards"]
-        D1["100k Transaction Analysis<br/>(HTML Dashboard & JTL Logs)"]
-        D2["CRUD Latency Baseline Report<br/>(Statistics & Metric Profiles)"]
-        D3["Core Web Vitals Scorecards<br/>(Performance, A11y, SEO, Best Practices)"]
+        D1["100k Transaction Stress Report (HTML Dashboard & JTL)"]
+        D2["CRUD Latency Baseline Report (Statistics JSON)"]
+        D3["Core Web Vitals Scorecards (Performance & A11y Audits)"]
     end
 
-    JM -->|Stress Testing (100k Requests)| T1
-    JM -->|Load Testing (600 Requests)| T2
-    LH -->|Non-Intrusive DOM Audit| T3
+    JM -->|Stress Testing - 100k Requests| T1
+    JM -->|Load Testing - 600 Requests| T2
+    LH -->|Client-Side Performance Audit| T3
 
     T1 --> D1
     T2 --> D2
